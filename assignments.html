@@ -1,0 +1,40 @@
+---
+layout: coursepage
+title: 15-441/641 Assignments
+---
+
+Unless otherwise noted, all deadlines are at <em>5PM</em>.
+
+<table class="table table-hover table-striped">
+<tr>
+<th>Assignment</th>
+<th>Assigned</th>
+<th>Due</th>
+<th>Notes</th>
+</tr>
+
+{% assign sorted = site.homework | sort: 'released' %}
+
+
+{% for todo in sorted %}
+
+<tr>
+        <td><a href="handout/{{ todo.writeup }}">{{ todo.title }}</a></td>
+        
+        <td>
+        {{ todo.released | date: "%b %d" }}
+				</td>
+        
+        <td>
+        {{ todo.due | date: "%b %d" }}
+				</td>
+
+        <td>
+        {{ todo.notes }}
+				</td>
+</tr>
+
+{% endfor %}
+
+</table>
+

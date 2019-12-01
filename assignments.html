@@ -13,18 +13,18 @@ Unless otherwise noted, all deadlines are at <em>5PM</em>.
 <th>Notes</th>
 </tr>
 
-{% assign sorted = site.homeworks | sort: 'released' %}
+{% assign sorted = site.homework | sort: 'released' %}
 
 
 {% for todo in sorted %}
 
 <tr>
         <td><a href="handout/{{ todo.writeup }}">{{ todo.title }}</a></td>
-        
+
         <td>
         {{ todo.released | date: "%b %d" }}
 				</td>
-        
+
         <td>
         {{ todo.due | date: "%b %d" }}
 				</td>
